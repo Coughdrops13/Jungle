@@ -16,8 +16,8 @@
         </tr>
       </thead>
       <tbody>
-        <% @product_array.each do |product| %>
-          <%= render 'line_item', product:product %>
+        <% @order.line_items.each do |item| %>
+          <%= render 'line_item', item:item %>
         <% end %>
       </tbody>
       <tfoot>
