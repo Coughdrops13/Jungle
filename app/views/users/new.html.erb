@@ -3,11 +3,14 @@
     <h1>Signup!</h1>
   </header>
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-1"
+    <div class="col-sm-6 col-sm-offset-1">
       <%= form_for :user, url: '/users' do |f| %>
 
         <div class="form-group">
-          Name: <%= f.text_field :name %>
+          First Name: <%= f.text_field :last_name %>
+        </div>
+        <div class="form-group">
+          Last Name: <%= f.text_field :first_name %>
         </div>
         <div class="form-group">
           Email: <%= f.text_field :email %>
@@ -19,7 +22,7 @@
           Password Confirmation: <%= f.password_field :password_confirmation %>
         </div>
 
-        <%= f.submit "Submit", class: 'btn btn-primary' %>
+        <%= f.submit 'Submit' %>
 
       <% end %>
     </div>
