@@ -33,10 +33,9 @@ RSpec.describe Product, type: :model do
       end
       context 'product with no price attribute' do
         @category = Category.create({ name: "uno" })
-        @product = Product.create({ name: "p-uno", price: nil, quantity: 30, category: @category })
+        @product = Product.create({ name: "p-uno", quantity: 30, category: @category })
         error = @product.errors.full_messages
-        puts "HELLLOOOOOOO"
-        p error
+        
         it "returns 'Price can't be blank'" do
           expect(error).to include("Price can't be blank")
         end
