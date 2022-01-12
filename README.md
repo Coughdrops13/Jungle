@@ -34,6 +34,6 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 
 ## Screenshots
-!["Login (or sign up) from the top nav bar"]()
-!["View all products list"]()
-!["create a cart for checkout"]()
+!["Login (or sign up) from the top nav bar"](https://github.com/Coughdrops13/Jungle/blob/master/docs/login.png)
+!["View all products list"](https://github.com/Coughdrops13/Jungle/blob/master/docs/products_index.png)
+!["create a cart for checkout"](https://github.com/Coughdrops13/Jungle/blob/master/docs/cart.png)
