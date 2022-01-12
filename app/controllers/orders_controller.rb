@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-  before_filter :authorize
   
   def show
     @order = Order.find(params[:id])
@@ -39,11 +38,19 @@ class OrdersController < ApplicationController
   end
 
   def create_order(stripe_charge)
-    order = Order.new(
-      email: @current_user.email,
-      total_cents: cart_subtotal_cents,
-      stripe_charge_id: stripe_charge.id, # returned by stripe
-    )
+    if @current_user
+      order = Order.new(
+        email: @current_user.email,
+        total_cents: cart_subtotal_cents,
+        stripe_charge_id: stripe_charge.id, # returned by stripe
+      )
+    else
+      order = Order.new(
+        email: "Unregistered Visitor",
+        total_cents: cart_subtotal_cents,
+        stripe_charge_id: stripe_charge.id, # returned by stripe
+      )
+    end
 
     enhanced_cart.each do |entry|
       product = entry[:product]

@@ -5,7 +5,8 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
+    <h3>Thank you for your order. Your order total is <strong>$<%= '%.2f' % (@order.total_cents/ 100.0) %></strong></h3>
+    <h4>Email on order: <%= @order.email%></h4>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -21,7 +22,6 @@
         <% end %>
       </tbody>
       <tfoot>
-        <h2><%= @order.email %></h2>
       </tfoot>
     </table>
   </div>
