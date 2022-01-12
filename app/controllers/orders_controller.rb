@@ -2,8 +2,6 @@ class OrdersController < ApplicationController
   
   def show
     @order = Order.find(params[:id])
-    puts 'AHAHAHHAHAHAH'
-    p @order.inspect
   end
 
   def create
@@ -38,19 +36,11 @@ class OrdersController < ApplicationController
   end
 
   def create_order(stripe_charge)
-    if @current_user
-      order = Order.new(
-        email: @current_user.email,
+      order = Order.new( 
+        email: current_user ? current_user.email : "Unregistered Visitor",
         total_cents: cart_subtotal_cents,
         stripe_charge_id: stripe_charge.id, # returned by stripe
       )
-    else
-      order = Order.new(
-        email: "Unregistered Visitor",
-        total_cents: cart_subtotal_cents,
-        stripe_charge_id: stripe_charge.id, # returned by stripe
-      )
-    end
 
     enhanced_cart.each do |entry|
       product = entry[:product]

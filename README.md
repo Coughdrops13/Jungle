@@ -31,3 +31,9 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+
+## Screenshots
+!["Login (or sign up) from the top nav bar"]()
+!["View all products list"]()
+!["create a cart for checkout"]()
